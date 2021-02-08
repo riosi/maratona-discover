@@ -176,6 +176,7 @@ header {
   overflow-x: auto;
   display: block;
   width: 100%;
+  z-index: 3;
 }
 
 #data-table {
@@ -254,13 +255,12 @@ table tbody tr:hover {
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
+  z-index: 2;
 }
 
 .modal {
   background: #f0f2f0;
   padding: 2.4rem;
-  position: relative;
-  
 }
 
 /* Modal end */
@@ -312,6 +312,7 @@ footer {
   padding: 4rem 0 2rem;
   color: var(--darkblue);
   opacity: .6;
+  z-index: -1;
 }
 
 /* footer end */
@@ -320,7 +321,7 @@ footer {
 /* Responsive --- start */
 @media (min-width: 800px) {
   html {
-    font-size: 87.5%; /* ?px */
+    font-size: 87.5%; 
   }
 
   #balance {
