@@ -145,6 +145,7 @@ const Modal = {
     },
 
     formatDate(date) {
+      
       const splittedDate = date.split("-")
       return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
       
@@ -154,7 +155,14 @@ const Modal = {
   const Form = {
     description: document.querySelector('input#description'),
     amount: document.querySelector('input#amount'),
-    date: document.querySelector('input#date'),
+    date: document.querySelector("input#date"), 
+
+
+    setDefaults() {
+      var date = new Date();
+      date.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + 
+      '-' + date.getDate().toString().padStart(2, 0);
+    },
 
     getValues() {
       return {
@@ -213,6 +221,7 @@ const Modal = {
 
   const App = {
     init() {
+      Form.setDefaults();
 
       Transaction.all.forEach(DOM.addTransaction) 
 

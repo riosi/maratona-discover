@@ -107,6 +107,36 @@ button:hover {
 .button.cancel:hover {
   opacity: 1;
 }
+
+.btn-entrada,
+.btn-saida {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+#btn-amount {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 1px;
+}
+
+.btn-entrada:hover {
+  background-color: rgba(147, 221, 147, 0.678);
+}
+.btn-saida:hover {
+  background-color: rgba(224, 138, 138, 0.733);
+}
+
+
 /* Links & BUttons end */
 
 /* header start */
@@ -184,8 +214,7 @@ header {
     width: 100%;
     border-spacing: 0 0.5rem;
     color: #969cb3;
-    
-
+  
     
 }
 
@@ -202,14 +231,14 @@ table tbody tr td:last-child {
 table th {
     background: #fff;
     font-weight: normal;
-    padding: 1rem 2rem;
+    /*padding: 1rem 2rem;*/
     text-align: left;
     
 }
 
 table td {
     background: #fff;
-    padding: 1rem 2rem;
+    /*padding: 1rem 2rem;*/
     font-weight: normal;
 }
 
@@ -284,13 +313,19 @@ input {
   width: 100%;
 }
 
-.input-group {
-  margin-top: 0.8rem;
+input#amount {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.input-group small {
-  opacity: 0.4;
+.input-group {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
 }
+
 
 .input-group.actions {
   display: flex;
@@ -319,10 +354,12 @@ footer {
 
 
 /* Responsive --- start */
-@media (min-width: 800px) {
+
+@media (min-width: 700px) {
   html {
     font-size: 87.5%; 
   }
+
 
   #balance {
     display: grid;
@@ -330,6 +367,47 @@ footer {
     gap: 2rem;
   }
 
+  table th,
+  table td {
+    padding: 1.5rem;
+  }
+
+  .card p {
+    font-size: 1.8rem;
+  }
+  
 }
 
+@media (max-width: 800px) { 
+
+  table th {
+    background: #fff;
+    font-weight: normal;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+
+  }
+
+  table td {
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+}
+
+@media (min-width: 500px) {
+  .modal {
+    background: #f0f2f0;
+    padding: 2.4rem;
+    width: 450px;
+  }
+}
+
+@media (max-width: 499px) {
+  .modal {
+    background: #f0f2f0;
+    padding: 2.4rem;
+    width: 350px;
+  }
+}
 /* Responsive --- end*/

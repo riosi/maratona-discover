@@ -82,7 +82,7 @@
               />
             </div>
 
-            <div class="input-group">
+            <div class="input-group amount">
               <label class="sr-only" for="amount">Valor</label>
               <input
                 type="number"
@@ -90,16 +90,16 @@
                 id="amount"
                 name="amount"
                 placeholder="0,00"
-              />
-              <small class="help"
-                >Use o sinal - (negativo) para despesas e , (vírgula) para casas
-                decimais.</small
-              >
+              /> <div id="btn-amount">
+              <button class="btn-entrada"><img src="./assets/income.svg" alt="Imagem de entradas" /></button>
+              <button class="btn-saida">
+            <img src="./assets/expense.svg" alt="Imagem de saídas" /></button>
+              </div>
             </div>
 
             <div class="input-group">
               <label class="sr-only" for="date">Data</label>
-              <input type="date" id="date" name="date" />
+              <input type="date" id="date" name="date" value=""/>
             </div>
 
             <div class="input-group actions">
