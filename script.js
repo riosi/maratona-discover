@@ -158,11 +158,6 @@ const Modal = {
     date: document.querySelector("input#date"), 
 
 
-    setDefaults() {
-      var date = new Date();
-      date.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + 
-      '-' + date.getDate().toString().padStart(2, 0);
-    },
 
     getValues() {
       return {
@@ -221,7 +216,7 @@ const Modal = {
 
   const App = {
     init() {
-      Form.setDefaults();
+      
 
       Transaction.all.forEach(DOM.addTransaction) 
 
