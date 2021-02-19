@@ -91,9 +91,8 @@
                 name="amount"
                 placeholder="0,00"
               /> <div id="btn-amount">
-              <button class="btn-entrada"><img src="./assets/income.svg" alt="Imagem de entradas" /></button>
-              <button class="btn-saida">
-            <img src="./assets/expense.svg" alt="Imagem de saídas" /></button>
+                <img src="./assets/income.svg" class="btn-entrada" onclick="Form.toggleEntradaSaida('entrada');" alt="Imagem de entradas" />
+                <img onclick="Form.toggleEntradaSaida('saida');" class="btn-saida" src="./assets/expense.svg" alt="Imagem de saídas" />
               </div>
             </div>
 
@@ -101,7 +100,6 @@
               <label class="sr-only" for="date">Data</label>
               <input type="date" id="date" name="date" value=""/>
             </div>
-
             <div class="input-group actions">
               <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
               <button>Salvar</button>

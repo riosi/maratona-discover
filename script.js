@@ -139,9 +139,7 @@ const Modal = {
 
     formatAmount(value) {
       value = value * 100
-
       return Math.round(value)
-
     },
 
     formatDate(date) {
@@ -157,7 +155,12 @@ const Modal = {
     amount: document.querySelector('input#amount'),
     date: document.querySelector("input#date"), 
 
-
+    toggleEntradaSaida(tipo) {
+      let valorAtual = Form.amount.value;
+      if ((tipo === 'entrada' && valorAtual < 0) || (tipo === 'saida' && valorAtual > 0)) {
+        Form.amount.value = valorAtual * -1;
+      }
+    }, 
 
     getValues() {
       return {
@@ -188,6 +191,12 @@ const Modal = {
       }
     },
 
+    addExpense() {
+      
+
+    },
+
+
     clearFields() {
       Form.description.value = ""
       Form.amount.value = ""
@@ -217,7 +226,7 @@ const Modal = {
   const App = {
     init() {
       
-
+      
       Transaction.all.forEach(DOM.addTransaction) 
 
       DOM.updateBalance()
