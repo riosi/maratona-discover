@@ -191,12 +191,6 @@ const Modal = {
       }
     },
 
-    addExpense() {
-      
-
-    },
-
-
     clearFields() {
       Form.description.value = ""
       Form.amount.value = ""
