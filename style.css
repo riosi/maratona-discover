@@ -67,7 +67,7 @@ button {
   height: 50px;
 
   border: none;
-
+  font-family: 'Poppins', sans-serif;
   color: #FFF;
   background: var(--dark-purple);
   
@@ -344,6 +344,7 @@ input#amount {
 .input-group.actions .button,
 .input-group.actions button {
   width: 48%;
+  font-size: 1em;
 }
 
 /* Form end */
