@@ -1,7 +1,5 @@
 :root {
   --darkblue: #363f5f;
-  --green: #49aa26;
-  --light-green: #3dd705;
   --red: #e92929;
   --darker-purple: #7c3981;
   --dark-purple: #a23eaa;
@@ -290,6 +288,7 @@ table tbody tr:hover {
 .modal {
   background: #f0f2f0;
   padding: 2.4rem;
+  border-radius: 5px;
 }
 
 /* Modal end */
