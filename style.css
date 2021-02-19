@@ -262,7 +262,8 @@ table tbody tr:hover {
 /* table end */
 
 /* Modal start */
-.modal-overlay {
+.modal-overlay,
+.modal-delete {
   width: 100%;
   height: 100%;
 
@@ -279,7 +280,8 @@ table tbody tr:hover {
   visibility: hidden;
 }
 
-.modal-overlay.active {
+.modal-overlay.active,
+.modal-delete.active {
   opacity: 1;
   visibility: visible;
   z-index: 2;
@@ -299,8 +301,15 @@ table tbody tr:hover {
   max-width: 500px;
 }
 
+
 #form h2 {
   margin-top: 0;
+}
+
+#confirmDelete h2 {
+  margin-top: 0;
+  text-align: center;
+  
 }
 
 input {

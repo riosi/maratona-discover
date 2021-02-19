@@ -6,39 +6,51 @@ const Modal = {
 
     },
 
-    close() {
-      // Fechar modal -- remover class active do modal
-      document.querySelector('.modal-overlay').classList.remove('active')
+    // Abrir modal remoção de item
+    delete(index) {
+      let modal = document.querySelector('#confirmDelete')
+      const html = `
+      <h2>Deseja excluir item?</h2>
+      <div class="input-group actions">
+        <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+        <button onclick="Transaction.remove(${index})">Excluir Item</button>
+      </div>
+      ` 
+      modal.innerHTML = html
+      document.querySelector('.modal-delete')
+      .classList.add('active')
+    },
 
+    close() {
+      // Fechar modal -- remover class active o modal
+      document.querySelector('.modal-overlay', ).classList.remove('active')
+      document.querySelector('.modal-delete', ).classList.remove('active')
     }
   }
 
   const Storage = {
     get() {
       return JSON.parse(localStorage.getItem('devfinances:transactions')) || []
-
     },
+
     set(transactions) {
       localStorage.setItem("devfinances:transactions", JSON.stringify(transactions))
-
     }
   }
 
-  
   const Transaction = {
 
     all: Storage.get(),
 
     add(transaction) {
       Transaction.all.push(transaction)
-
       App.reload()
     },
 
     remove(index) {
       Transaction.all.splice(index, 1)
-
       App.reload()
+      Modal.close()
     },
 
     incomes() {
@@ -82,7 +94,6 @@ const Modal = {
       tr.dataset.index = index
 
       DOM.transactionsContainer.appendChild(tr)   
-      
     },
 
     innerHTMLTransaction(transaction, index) {
@@ -94,7 +105,7 @@ const Modal = {
               <td class="${cssClass}">${amount}</td>
               <td class="data">${transaction.date}</td>
               <td>
-                <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação" />
+                <img onclick="Modal.delete(${index})" src="./assets/minus.svg" alt="Remover transação" />
               </td>
             </tr>
       ` 
@@ -145,8 +156,7 @@ const Modal = {
     formatDate(date) {
       
       const splittedDate = date.split("-")
-      return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
-      
+      return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}` 
     }
   }
 
